@@ -1,0 +1,16 @@
+apply plugin: 'hooklib'
+
+hookPlugin {
+    enable true
+    enableInDebug true
+    logLevel "DEBUG"
+    hookPoint = [
+            "com.lxzh123.library.SignUtils": ["getPkgName":
+                                                      [
+                                                              "com.lxzh123.hookpkg.HookUtils",
+                                                              "getPkgName",
+                                                              "(Landroid/content/Context;)Ljava/lang/String;"
+                                                      ]
+            ]
+    ]
+}
