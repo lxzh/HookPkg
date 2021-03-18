@@ -1,19 +1,27 @@
 apply plugin: 'java'
+apply plugin: 'groovy'
 apply from: './upload.gradle'
 
 dependencies {
     implementation gradleApi()
-    implementation localGroovy()
+//    implementation localGroovy()
 
     compileOnly "com.android.tools.build:gradle:${AGP_VERSION}"
     implementation "com.bytedance.android.byteX:common:${BYTEX_VERSION}"
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
 
 
 sourceSets {
     main {
+        groovy {
+//            srcDir 'src/main/groovy'
+//            srcDir 'src/main/java'
+            srcDirs = ['src/main/groovy']
+        }
         java {
-            srcDir 'src/main/java'
+//            srcDir 'src/main/java'
+            srcDirs = []
         }
 
         resources {
@@ -26,7 +34,8 @@ sourceSets {
 jar {
     sourceSets {
         main {
-            java.srcDirs = ['src/main/java']
+            groovy.srcDirs = ['src/main/groovy']
+//            java.srcDirs = ['src/main/java']
         }
     }
     manifest {

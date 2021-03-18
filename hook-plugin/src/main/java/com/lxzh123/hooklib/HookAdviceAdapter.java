@@ -40,10 +40,9 @@ public class HookAdviceAdapter extends AdviceAdapter {
 
     @Override
     public void visitMethodInsn(int opcode, String owner, String name, String descriptor, boolean isInterface) {
-
-        System.out.println("HookAdviceAdapter->visitMethodInsn opcode=" + opcode + ", owner=" + owner + ", name=" + name + ", desc=" + descriptor + ", isInterface=" + isInterface);
+//        System.out.println("HookAdviceAdapter->visitMethodInsn opcode=" + opcode + ", owner=" + owner + ", name=" + name + ", desc=" + descriptor + ", isInterface=" + isInterface);
         if (INVOKEVIRTUAL == opcode) {
-//            System.out.println("HookAdviceAdapter->visitMethodInsn owner=" + owner + ", name=" + name + ", desc=" + descriptor + ", isInterface=" + isInterface);
+            System.out.println("HookAdviceAdapter->visitMethodInsn owner=" + owner + ", name=" + name + ", desc=" + descriptor + ", isInterface=" + isInterface);
             super.visitMethodInsn(INVOKESTATIC, mReplaceMethod.get(0).replace(".", "/"), mReplaceMethod.get(1), mReplaceMethod.get(2), isInterface);
         } else {
             super.visitMethodInsn(opcode, owner, name, descriptor, isInterface);

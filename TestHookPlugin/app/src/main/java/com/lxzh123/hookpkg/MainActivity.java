@@ -10,8 +10,6 @@ import java.lang.reflect.Field;
 
 public class MainActivity extends Activity {
 
-    private final static String TAG = "HookTest";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

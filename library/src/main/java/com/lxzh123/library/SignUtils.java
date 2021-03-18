@@ -16,6 +16,11 @@ public class SignUtils {
 //        return HookUtils.getPkgName1(context);
     }
 
+    public static String getPkgName(Context context, String param1) {
+        return context.getPackageName();
+//        return HookUtils.getPkgName1(context);
+    }
+
     public static String getSign(Context context) {
         Signature[] signs = getRawSignature(context);
         if (signs == null || signs.length == 0) {

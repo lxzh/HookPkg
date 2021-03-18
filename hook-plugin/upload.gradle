@@ -28,11 +28,11 @@ publish {
     licences        = [LICENCES]
 }
 
-group=GROUP
-archivesBaseName=ARTIFACTID
-version=VERSION
+group               = GROUP
+archivesBaseName    = ARTIFACTID
+version             = VERSION
 
-[compileJava, javadoc]*.options*.encoding = 'UTF-8'
+[compileJava, compileGroovy, javadoc]*.options*.encoding = 'UTF-8'
 
 uploadArchives {
     repositories {

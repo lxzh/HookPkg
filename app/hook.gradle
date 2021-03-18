@@ -5,12 +5,33 @@ hookPlugin {
     enableInDebug true
     logLevel "DEBUG"
     hookPoint = [
-            "com.lxzh123.library.SignUtils": ["getPkgName":
-                                                      [
-                                                              "com.lxzh123.hookpkg.HookUtils",
-                                                              "getPkgName",
-                                                              "(Landroid/content/Context;)Ljava/lang/String;"
-                                                      ]
+            "com.lxzh123.library.SignUtils": ["getPkgName": [
+                          "com.lxzh123.hookpkg.HookUtils",
+                          "getPkgName",
+                          "(Landroid/content/Context;)Ljava/lang/String;"
+                  ]
             ]
     ]
+    hookConfig = [{
+        include = {
+            pkg = ["com.lxzh123.library"]
+            cls = ["SignUtils"]
+            mth = ["getPkgName", "getPkgName1"]
+        }
+        exclude = {
+            pkg = ["com.lxzh123.library"]
+            cls = ["SignUtils"]
+            mth = ["getPkgName", "getPkgName1"]
+        }
+        source = {
+            cls = "android.content.Context"
+            mth = "getPackageName"
+            desc = "()Ljava/lang/String;"
+        }
+        target = {
+            cls = "com.lxzh123.hookpkg.HookUtils"
+            mth = "getPkgName"
+            desc = "(Landroid/content/Context;)Ljava/lang/String;"
+        }
+    }]
 }
