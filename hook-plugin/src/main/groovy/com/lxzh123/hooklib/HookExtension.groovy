@@ -30,10 +30,10 @@ class HookExtension extends BaseExtension {
             mHookConfig = new HookConfig()
         }
         if (mHookConfig.include == null) {
-            mHookConfig.include = new MethodList()
+            mHookConfig.include = new HashMap<>()
         }
         if (mHookConfig.exclude == null) {
-            mHookConfig.exclude = new MethodList()
+            mHookConfig.exclude = new HashMap()
         }
         if (mHookConfig.source == null) {
             mHookConfig.source = new MethodItem()

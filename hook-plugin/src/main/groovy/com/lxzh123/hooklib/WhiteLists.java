@@ -20,6 +20,7 @@ import com.lxzh123.hooklib.utils.TextUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The white list contains some ignored levels. We defined some popular
@@ -57,6 +58,18 @@ final class WhiteLists {
             }
         }
         return false;
+    }
+
+    public static String hasKeyStartWith(String key, Map<String, Object> map) {
+        if (TextUtils.isEmpty(key)) {
+            return null;
+        }
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            if (key.startsWith(entry.getKey())) {
+                return entry.getKey();
+            }
+        }
+        return null;
     }
 
     public static String trueClassName(String className) {
