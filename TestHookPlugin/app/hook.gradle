@@ -39,25 +39,27 @@ hookPlugin {
 
     hookConfig '''
     {
-        "include" : {
-            "pkg" : ["com.lxzh123.library"],
-            "cls" : ["SignUtils"],
-            "mth" : ["getPkgName", "getRawSignature"]
-        },
-        "exclude" : {
-            "pkg" : ["com.lxzh123.library"],
-            "cls" : ["SignUtils"],
-            "mth" : ["getPkgName", "getPkgName1"]
-        },
-        "source" : {
-            "cls" : "android.content.Context",
-            "mth" : "getPackageName",
-            "desc" : "()Ljava/lang/String;"
-        },
-        "target" : {
-            "cls" : "com.lxzh123.hookpkg.HookUtils",
-            "mth" : "getPkgName",
-            "desc" : "(Landroid/content/Context;)Ljava/lang/String;"
+        "include": {
+            "com.lxzh123.library1": {
+                "SignUtils2": [
+                    "getPkgName1",
+                    "getRawSignature1"
+                ],
+                "SignUtils1": [
+                    "getPkgName",
+                    "getRawSignature"
+                ]
+            },
+            "com.lxzh123.library": {
+                "SignUtils": [
+                    "getPkgName",
+                    "getRawSignature"
+                ],
+                "SignUtils1": [
+                    "getPkgName1",
+                    "getRawSignature1"
+                ]
+            }
         }
     }
 '''

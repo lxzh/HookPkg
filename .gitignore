@@ -15,3 +15,12 @@
 .externalNativeBuild
 .cxx
 local.properties
+.project
+.settings/org.eclipse.buildship.core.prefs
+app/.settings/org.eclipse.buildship.core.prefs
+library/.settings/org.eclipse.buildship.core.prefs
+TestHookPlugin/.idea/
+library/.classpath
+app/.classpath
+hook-plugin/.classpath
+hook-plugin/.settings/org.eclipse.buildship.core.prefs
